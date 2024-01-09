@@ -1,0 +1,49 @@
+<div class="container">
+
+
+  <!-- devices -->
+
+
+  <!-- ngx-scanner-qrcode -->
+  <ngx-scanner-qrcode #action="scanner" [config]="config" (event)="onEvent($event, action)"></ngx-scanner-qrcode>
+
+  <!-- data  -->
+  <!-- <p class="data">{{ (action.data | async | json) }}</p> -->
+
+  <!-- loading -->
+  <p *ngIf="action.isLoading">⌛ Loading...</p>
+
+  <!-- start/stop -->
+  <button class="btn" [class.btn-info]="!action.isStart" [class.btn-warning]="action.isStart"
+    [disabled]="action.isLoading" (click)="handle(action, action.isStart ? 'stop' : 'start')">
+    <img
+      [src]="action.isStart ? 'https://id1945.github.io/images/svg/camera-off.svg' : 'https://id1945.github.io/images/svg/camera-on.svg'"
+      width="30px" />
+  </button>
+
+  <!-- play/pause -->
+  <button class="btn" [class.btn-info]="!action.isStart" [class.btn-warning]="action.isStart"
+    [disabled]="!action.isStart" (click)="handle(action, action.isPause ? 'play' : 'pause')">
+    <img
+      [src]="action.isPause ? 'https://id1945.github.io/images/svg/play.svg': 'https://id1945.github.io/images/svg/pause.svg'"
+      width="30px" />
+  </button>
+
+  <!-- isTorch -->
+  <button class="btn" [class.btn-info]="!action.isStart" [class.btn-warning]="action.isStart"
+    [disabled]="!action.isStart" (click)="action.isTorch = !action.isTorch; handle(action, 'torcher')">
+    <img
+      [src]="action.isTorch ? 'https://id1945.github.io/images/svg/flash-off.svg' : 'https://id1945.github.io/images/svg/flash-on.svg'"
+      width="30px" />
+  </button>
+
+  <!-- back button -->
+
+
+  <ion-buttons>
+    <ion-icon class="btn" (click)="cancelBtn()" name="arrow-back" style="padding: 10px" slot="start"></ion-icon>
+  </ion-buttons>
+
+
+
+</div>

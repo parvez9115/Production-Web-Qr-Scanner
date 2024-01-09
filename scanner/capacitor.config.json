@@ -1,0 +1,11 @@
+{
+  "appId": "com.scanner.app",
+  "appName": "scanner",
+  "bundledWebRuntime": false,
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  }
+}

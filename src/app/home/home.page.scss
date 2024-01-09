@@ -1,0 +1,39 @@
+.label-style {
+  border: 1px solid #e5e5e5;
+  background: #e8e8e8;
+  line-height: 18px;
+}
+
+.col-content {
+  text-align: left;
+  align-self: center;
+  font-size: 18px;
+}
+
+.button {
+  margin-top: 2%;
+  --background: #7c68f8;
+}
+.input {
+  border: 1px solid #e5e5e5;
+  height: 35px;
+  line-height: 18px;
+  --padding-start: 15px;
+  background: #e8e8e8;
+  margin: 7px;
+}
+
+@media only screen and (max-width: 767px) {
+  .form-field {
+    zoom: 80%;
+  }
+
+  #submitbtn {
+    width: 80%;
+  }
+}
+
+.form-field {
+  margin: 0px 5px 0px;
+  border-radius: 7px;
+}
